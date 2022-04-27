@@ -16,10 +16,26 @@ namespace Platformer.Game.Objects
         [Header("External Components")]
         [SerializeField] private Door _door;
         [SerializeField] private BaseAnimatable _baseAnimatable;
-        
+
         private Tween _tween;
         private bool _isPressed;
-        
+
+        private int _elementsCount;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            _elementsCount++;
+            if (_elementsCount == 1)
+                Enter();
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            _elementsCount--;
+            
+            if (_elementsCount == 0)
+                Exit();
+        }
 
         [Button()]
         private void Enter()
@@ -38,10 +54,10 @@ namespace Platformer.Game.Objects
             _tween?.Kill();
 
             Sequence sequence = DOTween.Sequence();
-            
+
             if (_isPressed)
                 sequence.AppendInterval(_delayBeforeStart);
-            
+
             sequence.Append(transform
                 .DOMove(_startPositionInfo.Value, _startPositionInfo.Duration)
                 .SetEase(_startPositionInfo.Ease));
