@@ -1,13 +1,13 @@
 namespace Platformer.Infrastructure.StateMachine.States
 {
-    public class GameState : IAppState
+    public class GameState : BaseState
     {
-        public void Enter()
+        public override void Enter()
         {
             
         }
 
-        public void Exit()
+        public override void Exit()
         {
         }
     }

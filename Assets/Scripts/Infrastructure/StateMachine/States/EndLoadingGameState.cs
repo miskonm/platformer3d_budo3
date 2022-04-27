@@ -3,7 +3,7 @@ using Platformer.UI.Loading;
 
 namespace Platformer.Infrastructure.StateMachine.States
 {
-    public class EndLoadingGameState : IAppState
+    public class EndLoadingGameState : BaseState
     {
         private readonly ILoadingScreen _loadingScreen;
         private readonly IAppStateMachine _stateMachine;
@@ -16,14 +16,14 @@ namespace Platformer.Infrastructure.StateMachine.States
             _gameLogger = gameLogger;
         }
 
-        public void Enter()
+        public override void Enter()
         {
             _gameLogger.Bootstrap();
 
             _stateMachine.Enter<GameState>();
         }
 
-        public void Exit()
+        public override void Exit()
         {
             _loadingScreen.Hide();
         }

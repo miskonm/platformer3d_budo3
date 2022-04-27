@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Platformer.Infrastructure.StateMachine.States
 {
-    public class StartLoadingGameState : IAppState
+    public class StartLoadingGameState : BaseState
     {
         private readonly ILoadingScreen _loadingScreen;
         private readonly IAppStateMachine _stateMachine;
@@ -22,14 +22,14 @@ namespace Platformer.Infrastructure.StateMachine.States
             _coroutineRunner = coroutineRunner;
         }
 
-        public void Enter()
+        public override void Enter()
         {
             _loadingScreen.Show();
 
             _coroutineRunner.StartCoroutine(EnterWithDelay());
         }
 
-        public void Exit()
+        public override void Exit()
         {
         }
 

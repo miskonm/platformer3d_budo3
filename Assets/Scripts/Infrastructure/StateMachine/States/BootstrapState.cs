@@ -2,7 +2,7 @@ using Platformer.Infrastructure.SceneLoading;
 
 namespace Platformer.Infrastructure.StateMachine.States
 {
-    public class BootstrapState : IAppState
+    public class BootstrapState : BaseState
     {
         private readonly ISceneLoader _sceneLoader;
         private readonly IAppStateMachine _stateMachine;
@@ -13,14 +13,14 @@ namespace Platformer.Infrastructure.StateMachine.States
             _stateMachine = stateMachine;
         }
 
-        public void Enter()
+        public override void Enter()
         {
             // Prepare services
             _sceneLoader.LoadScene(SceneName.Menu);
             _stateMachine.Enter<MenuState>();
         }
 
-        public void Exit()
+        public override void Exit()
         {
             
         }

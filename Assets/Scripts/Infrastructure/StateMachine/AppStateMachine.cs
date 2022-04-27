@@ -2,11 +2,13 @@ using Platformer.Infrastructure.StateMachine.States;
 
 namespace Platformer.Infrastructure.StateMachine
 {
-    public class AppStateMachine : IAppStateMachine
+    public class AppStateMachine : IAppStateMachine, IDebugAppStateMachine
     {
         private readonly IAppStateFactory _appStateFactory;
         
         private IAppState _currentState;
+
+        public IAppState CurrentState => _currentState;
 
         public AppStateMachine(IAppStateFactory appStateFactory)
         {
@@ -19,5 +21,7 @@ namespace Platformer.Infrastructure.StateMachine
             _currentState = _appStateFactory.Create<TState>();
             _currentState.Enter();
         }
+
+      
     }
 }

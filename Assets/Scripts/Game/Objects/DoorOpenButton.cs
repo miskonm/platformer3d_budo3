@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using NaughtyAttributes;
 using Platformer.Game.Utility.Animations;
@@ -16,9 +17,9 @@ namespace Platformer.Game.Objects
         [SerializeField] private Door _door;
         [SerializeField] private BaseAnimatable _baseAnimatable;
         
-
         private Tween _tween;
         private bool _isPressed;
+        
 
         [Button()]
         private void Enter()

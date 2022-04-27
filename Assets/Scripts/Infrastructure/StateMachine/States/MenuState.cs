@@ -2,18 +2,18 @@ using Platformer.Infrastructure.SceneLoading;
 
 namespace Platformer.Infrastructure.StateMachine.States
 {
-    public class MenuState : IAppState
+    public class MenuState : BaseState
     {
 
         public MenuState(ISceneLoader sceneLoader)
         {
         }
 
-        public void Enter()
+        public override void Enter()
         {
         }
 
-        public void Exit()
+        public override void Exit()
         {
         }
     }
