@@ -1,4 +1,5 @@
 using Platformer.Game.Logger;
+using Platformer.Game.Services.Pause;
 using Zenject;
 
 namespace Platformer.Game
@@ -8,6 +9,7 @@ namespace Platformer.Game
         public override void InstallBindings()
         {
             GameLoggerInstaller.Install(Container);
+            PauseServiceInstaller.Install(Container);
         }
     }
 }
