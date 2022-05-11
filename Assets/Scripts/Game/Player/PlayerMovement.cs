@@ -26,8 +26,11 @@ namespace Platformer.Game.Player
         private IInputService _inputService;
 
         private Transform _cachedTransform;
-        private bool _isGrounded;
         private Vector3 _fallVector;
+
+        public Vector3 Velocity { get; private set; }
+        public bool IsGrounded { get; private set; }
+        public float VerticalVelocity { get; private set; }
 
         [Inject]
         public void Construct(IInputService inputService)
@@ -45,21 +48,26 @@ namespace Platformer.Game.Player
             Vector2 moveAxis = _inputService.MoveAxis;
 
             Vector3 moveVector = _cachedTransform.right * moveAxis.x + _cachedTransform.forward * moveAxis.y;
-            _controller.Move(moveVector * (_speed * Time.deltaTime));
+            Velocity = moveVector * _speed;
+            _controller.Move(Velocity * Time.deltaTime);
 
-            _isGrounded =
+            IsGrounded =
                 Physics.CheckSphere(_groundCheckTransform.position, _groundCheckRadius, _groundCheckLayerMask);
 
-            if (_isGrounded && _fallVector.y < 0)
+            if (IsGrounded && _fallVector.y < 0)
                 _fallVector.y = 0;
 
             float gravity = Physics.gravity.y * _gravityMultiplier;
 
-            if (_inputService.IsJump && _isGrounded)
+            if (_inputService.IsJump && IsGrounded)
+            {
+                Debug.LogError("Jump");
                 _fallVector.y = Mathf.Sqrt(_jumpHeight * -2f * gravity);
+            }
 
             _fallVector.y += gravity * Time.deltaTime;
             _controller.Move(_fallVector * Time.deltaTime);
+            VerticalVelocity = _fallVector.y;
         }
     }
 }
