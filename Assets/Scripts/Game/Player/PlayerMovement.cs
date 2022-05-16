@@ -61,7 +61,6 @@ namespace Platformer.Game.Player
 
             if (_inputService.IsJump && IsGrounded)
             {
-                Debug.LogError("Jump");
                 _fallVector.y = Mathf.Sqrt(_jumpHeight * -2f * gravity);
             }
 
