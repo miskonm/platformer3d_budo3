@@ -1,4 +1,4 @@
-namespace Platformer.Game.Enemies
+namespace Platformer.Game.Enemy
 {
     public enum EnemyType
     {

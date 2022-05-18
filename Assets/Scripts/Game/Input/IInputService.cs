@@ -6,6 +6,7 @@ namespace Platformer.Game.Input
     {
         Vector2 MoveAxis { get; }
         bool IsJump { get; }
+        bool IsAttackUp { get; }
 
         void SetLocked(bool isLocked);
     }
