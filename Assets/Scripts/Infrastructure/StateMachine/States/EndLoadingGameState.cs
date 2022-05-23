@@ -47,8 +47,11 @@ namespace Platformer.Infrastructure.StateMachine.States
 
         private void InformReaders()
         {
-            foreach (ISaveLoadReader loadReader in _gameFactory.Readers)
+            for (int i = 0; i < _gameFactory.Readers.Count; i++)
+            {
+                ISaveLoadReader loadReader = _gameFactory.Readers[i];
                 loadReader.Load(_persistentService.Data);
+            }
         }
 
         private void LoadPersistentData()

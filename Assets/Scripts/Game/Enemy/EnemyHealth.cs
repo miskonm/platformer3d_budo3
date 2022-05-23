@@ -1,12 +1,14 @@
 using System;
 using Platformer.Game.Logger;
 using Platformer.Game.Logic;
+using Platformer.Infrastructure.Persistent.Data;
+using Platformer.Infrastructure.SaveLoad;
 using UnityEngine;
 using Zenject;
 
 namespace Platformer.Game.Enemy
 {
-    public class EnemyHealth : MonoBehaviour, IHealth
+    public class EnemyHealth : MonoBehaviour, IHealth, ISaveLoadWriter
     {
         [SerializeField] private float _current;
         [SerializeField] private float _max;
@@ -40,6 +42,14 @@ namespace Platformer.Game.Enemy
 
             Current -= damage;
             OnChanged?.Invoke();
+        }
+
+        public void Load(PersistentData persistentData)
+        {
+        }
+
+        public void Save(PersistentData persistentData)
+        {
         }
     }
 }
