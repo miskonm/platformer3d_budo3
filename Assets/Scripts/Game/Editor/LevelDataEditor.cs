@@ -1,5 +1,6 @@
 using System.Linq;
 using Platformer.Game.Enemy;
+using Platformer.Game.Objects;
 using Platformer.Game.Services.StaticData;
 using UnityEditor;
 using UnityEngine;
@@ -14,16 +15,16 @@ namespace Platformer.Game.Editor
         {
             base.OnInspectorGUI();
 
-            LevelData levelData = (LevelData)target;
+            LevelData levelData = (LevelData) target;
 
             if (GUILayout.Button("Get Info"))
             {
                 levelData.LevelName = SceneManager.GetActiveScene().name;
 
                 levelData.EnemySpawnPoints = FindObjectsOfType<EnemySpawnPoint>()
-                    .Select(x => new EnemySpawnData(x.EnemyType, x.transform.position))
+                    .Select(x => new EnemySpawnData(x.EnemyType, x.transform.position, x.GetComponent<UniqueId>().Id))
                     .ToList();
-                
+
                 EditorUtility.SetDirty(levelData);
                 AssetDatabase.SaveAssets();
             }

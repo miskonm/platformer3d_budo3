@@ -9,11 +9,13 @@ namespace Platformer.Game.Services.StaticData
     {
         public EnemyType EnemyType;
         public Vector3 Position;
+        public string Id;
 
-        public EnemySpawnData(EnemyType enemyType, Vector3 position)
+        public EnemySpawnData(EnemyType enemyType, Vector3 position, string id)
         {
             EnemyType = enemyType;
             Position = position;
+            Id = id;
         }
     }
 }

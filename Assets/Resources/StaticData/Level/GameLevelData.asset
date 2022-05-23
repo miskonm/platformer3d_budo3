@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelName: GameScene
   EnemySpawnPoints:
-  - EnemyType: 2
+  - EnemyType: 1
     Position: {x: 13.28, y: 0, z: 10.19}
+    Id: EnemySpawnPoint_086805e9-9c50-4a25-ba17-e5aed4bfda92
   - EnemyType: 1
     Position: {x: 5.4, y: 0, z: 21.8}
+    Id: EnemySpawnPoint_327733fc-22d2-4070-98ff-e59487a60f6f
   - EnemyType: 1
     Position: {x: 5.4, y: 0, z: 13.06}
+    Id: EnemySpawnPoint_8f2e1103-b7c9-4292-b028-7cbf3d9c767c
