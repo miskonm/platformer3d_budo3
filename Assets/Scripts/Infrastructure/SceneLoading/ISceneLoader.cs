@@ -1,7 +1,9 @@
+using Cysharp.Threading.Tasks;
+
 namespace Platformer.Infrastructure.SceneLoading
 {
     public interface ISceneLoader
     {
-        void LoadScene(string sceneName);
+        UniTask LoadSceneAsync(string sceneName);
     }
 }

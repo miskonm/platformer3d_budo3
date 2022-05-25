@@ -15,7 +15,7 @@ namespace Platformer.Game.Player
 
         private void Update()
         {
-            transform.localRotation = Quaternion.Euler(0f, _freeLook.m_XAxis.Value, 0f);
+            transform.rotation = Quaternion.Euler(0f, _freeLook.m_XAxis.Value, 0f);
         }
     }
 }

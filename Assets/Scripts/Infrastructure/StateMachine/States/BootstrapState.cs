@@ -13,10 +13,10 @@ namespace Platformer.Infrastructure.StateMachine.States
             _stateMachine = stateMachine;
         }
 
-        public override void Enter()
+        public override async void Enter()
         {
             // Prepare services
-            _sceneLoader.LoadScene(SceneName.Menu);
+            await _sceneLoader.LoadSceneAsync(SceneName.Menu);
             _stateMachine.Enter<MenuState>();
         }
 
