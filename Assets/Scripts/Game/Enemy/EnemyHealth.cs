@@ -31,7 +31,7 @@ namespace Platformer.Game.Enemy
             Current = current;
             Max = max;
 
-            _gameLogger.Log($"Enemy setuped");
+            // _gameLogger.Log($"Enemy setuped");
             OnChanged?.Invoke();
         }
 

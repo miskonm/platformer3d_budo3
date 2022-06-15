@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Platformer.Game.Enemy;
 using Platformer.Game.Services.StaticData;
 using Platformer.Infrastructure.SaveLoad;
@@ -12,7 +13,7 @@ namespace Platformer.Game.Services.Factory
         List<ISaveLoadReader> Readers { get; }
 
         void CreateEnemySpawner(EnemySpawnData spawnData);
-        GameObject CreateEnemy(EnemyType enemyType, Vector3 at, string id);
+        UniTask<GameObject> CreateEnemy(EnemyType enemyType, Vector3 at, string id);
 
         void Clean();
     }

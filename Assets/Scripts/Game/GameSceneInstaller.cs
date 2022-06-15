@@ -1,4 +1,5 @@
 using Platformer.Game.Logger;
+using Platformer.Game.Services.Assets;
 using Platformer.Game.Services.Factory;
 using Platformer.Game.Services.Pause;
 using Platformer.Game.Services.StaticData;
@@ -18,6 +19,7 @@ namespace Platformer.Game
             GameFactoryInstaller.Install(Container);
             PersistentServiceInstaller.Install(Container);
             SaveLoadServiceInstaller.Install(Container);
+            AssetsServiceInstaller.Install(Container);
         }
     }
 }

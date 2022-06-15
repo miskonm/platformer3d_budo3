@@ -52,9 +52,9 @@ namespace Platformer.Game.Enemy
                 _isKilled = true;
         }
 
-        private void Spawn()
+        private async void Spawn()
         {
-            GameObject enemy = _gameFactory.CreateEnemy(EnemyType, at: transform.position, Id);
+            GameObject enemy = await _gameFactory.CreateEnemy(EnemyType, at: transform.position, Id);
             if (enemy == null)
                 return;
 

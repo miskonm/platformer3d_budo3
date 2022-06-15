@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828dc358d5e74386ae2bc452bf5f6c6f, type: 3}
+  m_Name: AudioContainer
+  m_EditorClassIdentifier: 
+  AllMusic:
+  - name: Menu
+    Volume: 0.844
+    Path: Assets/ExternalAssets/3DGamekitLite/Audio/Environment/Acid/Acid_Pool_Jump.ogg
+    Clip: {fileID: 8300000, guid: b9c5afd3aabdf49a0a8974f8c9d4487f, type: 3}
+    Type: 1
+  - name: Game
+    Volume: 0.754
+    Path: Assets/ExternalAssets/3DGamekitLite/Audio/Environment/Acid/Acid_Water_Mono_Loop_1_01.ogg
+    Clip: {fileID: 8300000, guid: 0cda436072f464575a3801dc4d9758a0, type: 3}
+    Type: 2
+  AllSfx:
+  - name: Shoot
+    Volume: 1
+    Path: Assets/ExternalAssets/3DGamekitLite/Audio/Ellen/Weapon/RubbleImpact/Ancient_Alien_Staff_Rubble_Impact_01.ogg
+    Clip: {fileID: 8300000, guid: 0a4ba1f3f51114fb1814bddb5c66b99e, type: 3}
+    Type: 1
+  - name: Hit
+    Volume: 1
+    Path: Assets/ExternalAssets/3DGamekitLite/Audio/Enemies/Chomper/Locomotion/Run/Chomper_Run_Ft_Back_01.ogg
+    Clip: {fileID: 8300000, guid: 70ece8d618b4d43b08af272a3208792b, type: 3}
+    Type: 2
+  - name: Hit
+    Volume: 1
+    Path: Assets/ExternalAssets/3DGamekitLite/Audio/Enemies/Chomper/Locomotion/Run/Chomper_Run_Ft_Back_01.ogg
+    Clip: {fileID: 8300000, guid: 70ece8d618b4d43b08af272a3208792b, type: 3}
+    Type: 2

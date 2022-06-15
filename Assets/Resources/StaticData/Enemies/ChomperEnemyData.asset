@@ -15,3 +15,8 @@ MonoBehaviour:
   EnemyType: 1
   Hp: 16
   Prefab: {fileID: 3042698326272897545, guid: fe29392bef3c84e699dcde300631d39b, type: 3}
+  Reference:
+    m_AssetGUID: fe29392bef3c84e699dcde300631d39b
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

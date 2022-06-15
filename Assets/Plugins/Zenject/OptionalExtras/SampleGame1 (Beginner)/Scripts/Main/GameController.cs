@@ -42,7 +42,7 @@ namespace Zenject.Asteroids
         public void Initialize()
         {
             Physics.gravity = Vector3.zero;
-
+            
             Cursor.visible = false;
 
             _signalBus.Subscribe<ShipCrashedSignal>(OnShipCrashed);

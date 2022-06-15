@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Platformer.Game.Enemy;
 using Platformer.Game.Logic;
+using Platformer.Game.Services.Assets;
 using Platformer.Game.Services.StaticData;
 using Platformer.Infrastructure.SaveLoad;
 using UnityEngine;
@@ -11,17 +13,19 @@ namespace Platformer.Game.Services.Factory
     public class GameFactory : IGameFactory
     {
         private const string Tag = nameof(GameFactory);
-        
+
         private readonly IStaticDataService _staticDataService;
         private readonly DiContainer _diContainer;
+        private readonly IAssetsService _assetsService;
 
         public List<ISaveLoadWriter> Writers { get; } = new List<ISaveLoadWriter>();
         public List<ISaveLoadReader> Readers { get; } = new List<ISaveLoadReader>();
 
-        public GameFactory(IStaticDataService staticDataService, DiContainer diContainer)
+        public GameFactory(IStaticDataService staticDataService, DiContainer diContainer, IAssetsService assetsService)
         {
             _staticDataService = staticDataService;
             _diContainer = diContainer;
+            _assetsService = assetsService;
         }
 
         public void CreateEnemySpawner(EnemySpawnData spawnData)
@@ -36,7 +40,7 @@ namespace Platformer.Game.Services.Factory
             // enemySpawner.Spawn(); // TODO: Remove
         }
 
-        public GameObject CreateEnemy(EnemyType enemyType, Vector3 at, string id)
+        public async UniTask<GameObject> CreateEnemy(EnemyType enemyType, Vector3 at, string id)
         {
             EnemyData enemyData = _staticDataService.GetEnemyData(enemyType);
             if (enemyData == null)
@@ -45,7 +49,9 @@ namespace Platformer.Game.Services.Factory
                 return null;
             }
 
-            GameObject enemyGameObject = _diContainer.InstantiatePrefab(enemyData.Prefab);
+            GameObject enemyGameObject = await _assetsService.Instantiate(enemyData.Reference);
+            _diContainer.Inject(enemyGameObject);
+            // GameObject enemyGameObject = _diContainer.InstantiatePrefab(gameObject);
             // EnemyHealth instantiatePrefabForComponent = _diContainer.InstantiatePrefabForComponent<EnemyHealth>(enemyData.Prefab, new[] {id});
             enemyGameObject.transform.position = at;
             enemyGameObject.GetComponent<IHealth>().Setup(enemyData.Hp, enemyData.Hp);
@@ -57,7 +63,7 @@ namespace Platformer.Game.Services.Factory
         {
             foreach (ISaveLoadWriter saveLoadWriter in go.GetComponentsInChildren<ISaveLoadWriter>())
                 Writers.Add(saveLoadWriter);
-            
+
             foreach (ISaveLoadReader saveLoadReader in go.GetComponentsInChildren<ISaveLoadReader>())
                 Readers.Add(saveLoadReader);
         }

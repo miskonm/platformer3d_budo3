@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Prefab
+  m_EditorClassIdentifier: 
+  m_GroupName: Prefab
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a44e963a0d1c14d8288d0a4b947fb97b
+  m_SerializeEntries:
+  - m_GUID: fe29392bef3c84e699dcde300631d39b
+    m_Address: Chomber
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3a3cea986292c2445a02c973a48c7e8b
+    m_Address: Spitter
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f4cdd74364fb9d6448ecf7663dd0cfe9
+    m_Address: Ship
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5735f3b443f71894589af1323ad7a29b
+    m_Address: shipfractured
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 564c86c1543c6eb4e8525374599f15cc
+    m_Address: Space_Shooter
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 972561acbe31e7147b76d1a430caf37d
+    m_Address: Asteroid
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e9582d2bf7627a5478f06709df5f184c
+    m_Address: ChomperRagdoll
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c9c4e70e6d0b543d6888aa59efb92f3d, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1510531267dc740fe8057010d2f50f1a, type: 2}
+    - {fileID: 11400000, guid: c01840b312f53498e976a3e1c6f5d790, type: 2}

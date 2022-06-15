@@ -1,5 +1,6 @@
 using Platformer.Game.Enemy;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace Platformer.Game.Services.StaticData
 {
@@ -10,6 +11,6 @@ namespace Platformer.Game.Services.StaticData
 
         public EnemyType EnemyType;
         public float Hp;
-        public GameObject Prefab; // TODO: With resources or addressables
+        public AssetReferenceGameObject Reference;
     }
 }
