@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f24fb48fdf442b97042241fb6c854a, type: 3}
+  m_Name: UiContainer
+  m_EditorClassIdentifier: 
+  _screenConfigs:
+  - _name: MenuScreen.prefab
+    Path: Assets/Resources/UI/MenuScreen.prefab
+    Prefab: {fileID: 789473009636221146, guid: 69a531f1ec2ef46d0a2ca0246a3b5255, type: 3}
+    Type: MenuScreen
+  - _name: ShopScreen.prefab
+    Path: Assets/Resources/UI/ShopScreen.prefab
+    Prefab: {fileID: 5565564768013293636, guid: cf8ac0d735980434ca8cd6ed39e8a0bd,
+      type: 3}
+    Type: ShopScreen
+  _modalConfigs:
+  - _name: PlayConfgirmationModal.prefab
+    Path: Assets/Resources/UI/PlayConfgirmationModal.prefab
+    Prefab: {fileID: 2851550279924034365, guid: 19c66df16d9fc4a32af20a223dc65f93,
+      type: 3}
+    ModalName: 1

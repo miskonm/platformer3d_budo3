@@ -8,7 +8,6 @@ namespace Platformer.Infrastructure.StateMachine
         {
             Container.Bind<IAppStateFactory>().To<AppStateFactory>().AsSingle();
             Container.BindInterfacesTo<AppStateMachine>().AsSingle();
-            // Container.Bind<IAppStateMachine>().To<AppStateMachine>().AsSingle();
         }
     }
 }

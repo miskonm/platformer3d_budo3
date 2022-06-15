@@ -5,7 +5,7 @@ namespace Platformer.Infrastructure.StateMachine
     public class AppStateMachine : IAppStateMachine, IDebugAppStateMachine
     {
         private readonly IAppStateFactory _appStateFactory;
-        
+
         private IAppState _currentState;
 
         public IAppState CurrentState => _currentState;
@@ -21,7 +21,5 @@ namespace Platformer.Infrastructure.StateMachine
             _currentState = _appStateFactory.Create<TState>();
             _currentState.Enter();
         }
-
-      
     }
 }

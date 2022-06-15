@@ -1,3 +1,4 @@
+using Platformer.Infrastructure.Assets;
 using Platformer.Infrastructure.Coroutines;
 using Platformer.Infrastructure.SceneLoading;
 using Platformer.Infrastructure.StateMachine;
@@ -12,6 +13,7 @@ namespace Platformer.Installers
             AppStateMachineInstaller.Install(Container);
             SceneLoaderInstaller.Install(Container);
             CoroutineRunnerInstaller.Install(Container);
+            ResourcesAssetsServiceInstaller.Install(Container);
         }
     }
 }
